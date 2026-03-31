@@ -1802,6 +1802,34 @@
             }
         }
 
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 4px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-toggle span {
+            padding: 5px 10px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .lang-toggle span.active {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
         @media (max-width: 480px) {
             .stats-inner {
                 grid-template-columns: 1fr;
@@ -1824,19 +1852,23 @@
         <div class="container nav-inner">
             <a href="#" class="nav-logo">L<span>.</span>oft</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#process">Process</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+                <li><a href="#process" data-i18n="nav_process">Process</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-right">
                 <a href="tel:+13055551638" class="nav-phone">
                     <i class="fas fa-phone"></i>
                     (305) 555-LOFT
                 </a>
-                <a href="#contact" class="btn-primary">Get Your Free Quote</a>
+                <a href="#contact" class="btn-primary" data-i18n="nav_cta">Get Your Free Quote</a>
+                <div class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span class="active" id="langEN">EN</span>
+                    <span id="langES">ES</span>
+                </div>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -1848,14 +1880,14 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#about" onclick="closeMobile()">About</a>
-        <a href="#services" onclick="closeMobile()">Services</a>
-        <a href="#pricing" onclick="closeMobile()">Pricing</a>
-        <a href="#process" onclick="closeMobile()">Process</a>
+        <a href="#about" onclick="closeMobile()" data-i18n="nav_about">About</a>
+        <a href="#services" onclick="closeMobile()" data-i18n="nav_services">Services</a>
+        <a href="#pricing" onclick="closeMobile()" data-i18n="nav_pricing">Pricing</a>
+        <a href="#process" onclick="closeMobile()" data-i18n="nav_process">Process</a>
         <a href="#faq" onclick="closeMobile()">FAQ</a>
-        <a href="#contact" onclick="closeMobile()">Contact</a>
+        <a href="#contact" onclick="closeMobile()" data-i18n="nav_contact">Contact</a>
         <a href="tel:+13055551638" onclick="closeMobile()"><i class="fas fa-phone"></i> (305) 555-LOFT</a>
-        <a href="#contact" class="btn-primary" onclick="closeMobile()">Get Your Free Quote</a>
+        <a href="#contact" class="btn-primary" onclick="closeMobile()" data-i18n="nav_cta">Get Your Free Quote</a>
     </div>
 
     <!-- ==================== HERO ==================== -->
@@ -1867,20 +1899,20 @@
 
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
+                <div class="hero-badge" data-i18n-html="hero_badge">
                     <i class="fas fa-bolt"></i>
                     Now Accepting New Clients in Miami & LA
                 </div>
-                <h1>We Build Websites That <span class="highlight">Print Money</span></h1>
-                <p class="hero-sub">
+                <h1 data-i18n-html="hero_h1">We Build Websites That <span class="highlight">Print Money</span></h1>
+                <p class="hero-sub" data-i18n-html="hero_sub">
                     Your website should be your hardest-working employee. We build <strong>conversion-optimized</strong>, premium sites for local businesses backed by a team that has generated <strong>15 billion+ views</strong> online.
                 </p>
                 <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">
+                    <a href="#contact" class="btn-primary" data-i18n-html="hero_cta1">
                         <i class="fas fa-rocket"></i>
                         Get Your Free Quote
                     </a>
-                    <a href="#services" class="btn-secondary">
+                    <a href="#services" class="btn-secondary" data-i18n-html="hero_cta2">
                         <i class="fas fa-arrow-down"></i>
                         See What We Build
                     </a>
@@ -1948,19 +1980,19 @@
             <div class="stats-inner">
                 <div class="stat-item">
                     <div class="stat-number"><span class="counter" data-target="15">0</span><span class="accent">B+</span></div>
-                    <div class="stat-label">Views Generated Online</div>
+                    <div class="stat-label" data-i18n="stat1">Views Generated Online</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number"><span class="counter" data-target="719">0</span><span class="accent">K</span></div>
-                    <div class="stat-label">YouTube Subscribers</div>
+                    <div class="stat-label" data-i18n="stat2">YouTube Subscribers</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number"><span class="counter" data-target="4">0</span><span class="accent">M+</span></div>
-                    <div class="stat-label">Social Following</div>
+                    <div class="stat-label" data-i18n="stat3">Social Following</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number"><span class="accent"><</span><span class="counter" data-target="5">0</span></div>
-                    <div class="stat-label">Day Delivery</div>
+                    <div class="stat-label" data-i18n="stat4">Day Delivery</div>
                 </div>
             </div>
         </div>
@@ -1970,43 +2002,43 @@
     <section class="section" id="about">
         <div class="container">
             <div class="reveal">
-                <div class="section-label"><i class="fas fa-circle"></i> Who We Are</div>
-                <h2 class="section-title">Built by Creators.<br>Designed to Convert.</h2>
-                <p class="section-desc">We are not a generic web agency. We are content creators who understand attention economics at a level most designers never will.</p>
+                <div class="section-label" data-i18n-html="about_label"><i class="fas fa-circle"></i> Who We Are</div>
+                <h2 class="section-title" data-i18n-html="about_title">Built by Creators.<br>Designed to Convert.</h2>
+                <p class="section-desc" data-i18n="about_desc">We are not a generic web agency. We are content creators who understand attention economics at a level most designers never will.</p>
             </div>
 
             <div class="about-grid">
                 <div class="about-text reveal">
-                    <p>
+                    <p data-i18n-html="about_p1">
                         <strong>Loft was founded on one insight:</strong> the people who know how to capture 15 billion eyeballs online are the same people who should be building your website. Every scroll, every hover state, every CTA placement is informed by real data from audiences measured in the millions.
                     </p>
-                    <p>
+                    <p data-i18n-html="about_p2">
                         Our co-founder <strong>Matthew Gonzalez</strong> (matthewjgl) built his audience to 719K+ YouTube subscribers in his first month and has produced content generating <strong>15 billion+ views</strong> as a Senior Producer. He has worked with MrBeast, Jake Paul, and the biggest names in digital content. He is also the CEO of Vedit, a content creation platform.
                     </p>
-                    <p>
+                    <p data-i18n-html="about_p3">
                         Combined with <strong>Aiden Camacho's</strong> expertise in conversion architecture and front-end engineering, Loft delivers websites that do not just look premium, they <strong>generate revenue</strong>.
                     </p>
 
                     <div class="about-highlights">
                         <div class="about-highlight">
                             <i class="fas fa-eye"></i>
-                            <h4>Attention Experts</h4>
-                            <p>We know what makes people stop scrolling and start clicking.</p>
+                            <h4 data-i18n="hl1_title">Attention Experts</h4>
+                            <p data-i18n="hl1_desc">We know what makes people stop scrolling and start clicking.</p>
                         </div>
                         <div class="about-highlight">
                             <i class="fas fa-code"></i>
-                            <h4>Hand-Coded</h4>
-                            <p>No templates. Every site is custom-built from scratch.</p>
+                            <h4 data-i18n="hl2_title">Hand-Coded</h4>
+                            <p data-i18n="hl2_desc">No templates. Every site is custom-built from scratch.</p>
                         </div>
                         <div class="about-highlight">
                             <i class="fas fa-magnifying-glass-chart"></i>
-                            <h4>SEO-Native</h4>
-                            <p>Structured data and local SEO baked into every build.</p>
+                            <h4 data-i18n="hl3_title">SEO-Native</h4>
+                            <p data-i18n="hl3_desc">Structured data and local SEO baked into every build.</p>
                         </div>
                         <div class="about-highlight">
                             <i class="fas fa-gauge-high"></i>
-                            <h4>Performance-First</h4>
-                            <p>Sub-second load times. Zero bloat. Pure speed.</p>
+                            <h4 data-i18n="hl4_title">Performance-First</h4>
+                            <p data-i18n="hl4_desc">Sub-second load times. Zero bloat. Pure speed.</p>
                         </div>
                     </div>
                 </div>
@@ -2017,26 +2049,26 @@
                             <div class="founder">
                                 <div class="founder-avatar">MG</div>
                                 <h4>Matthew Gonzalez</h4>
-                                <p>Co-Founder / Creative Director</p>
+                                <p data-i18n="founder1_role">Co-Founder / Creative Director</p>
                             </div>
                             <div class="founder">
                                 <div class="founder-avatar" style="background: linear-gradient(135deg, var(--cool), var(--accent));">AC</div>
                                 <h4>Aiden Camacho</h4>
-                                <p>Co-Founder / Lead Engineer</p>
+                                <p data-i18n="founder2_role">Co-Founder / Lead Engineer</p>
                             </div>
                         </div>
                         <div class="about-card-stats">
                             <div class="about-card-stat">
                                 <div class="num">15B+</div>
-                                <div class="label">Views Produced</div>
+                                <div class="label" data-i18n="card_stat1">Views Produced</div>
                             </div>
                             <div class="about-card-stat">
                                 <div class="num">4.2M</div>
-                                <div class="label">Social Reach</div>
+                                <div class="label" data-i18n="card_stat2">Social Reach</div>
                             </div>
                             <div class="about-card-stat">
                                 <div class="num">MrBeast</div>
-                                <div class="label">Collaborated With</div>
+                                <div class="label" data-i18n="card_stat3">Collaborated With</div>
                             </div>
                             <div class="about-card-stat">
                                 <div class="num">CEO</div>
@@ -2053,47 +2085,47 @@
     <section class="section" id="services" style="background: var(--primary-light);">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <div class="section-label"><i class="fas fa-circle"></i> What We Build</div>
-                <h2 class="section-title">Everything Your Business<br>Needs to Dominate Online</h2>
-                <p class="section-desc" style="margin: 0 auto;">From single-page landing sites to full conversion ecosystems. Each one hand-built, conversion-optimized, and designed to outperform.</p>
+                <div class="section-label" data-i18n-html="svc_label"><i class="fas fa-circle"></i> What We Build</div>
+                <h2 class="section-title" data-i18n-html="svc_title">Everything Your Business<br>Needs to Dominate Online</h2>
+                <p class="section-desc" style="margin: 0 auto;" data-i18n="svc_desc">From single-page landing sites to full conversion ecosystems. Each one hand-built, conversion-optimized, and designed to outperform.</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card reveal">
                     <div class="service-icon"><i class="fas fa-paintbrush"></i></div>
-                    <h3>Website Design & Build</h3>
-                    <p>Premium, hand-coded websites that load fast, rank high, and convert visitors into paying customers.</p>
-                    <div class="service-link">Learn more <i class="fas fa-arrow-right"></i></div>
+                    <h3 data-i18n="svc1_title">Website Design & Build</h3>
+                    <p data-i18n="svc1_desc">Premium, hand-coded websites that load fast, rank high, and convert visitors into paying customers.</p>
+                    <div class="service-link" data-i18n-html="svc_link1">Learn more <i class="fas fa-arrow-right"></i></div>
                 </div>
                 <div class="service-card reveal">
                     <div class="service-icon"><i class="fas fa-arrows-rotate"></i></div>
-                    <h3>Website Redesign</h3>
-                    <p>We audit your current site, find where it leaks leads, and rebuild it from scratch to multiply your inquiries.</p>
-                    <div class="service-link">Learn more <i class="fas fa-arrow-right"></i></div>
+                    <h3 data-i18n="svc2_title">Website Redesign</h3>
+                    <p data-i18n="svc2_desc">We audit your current site, find where it leaks leads, and rebuild it from scratch to multiply your inquiries.</p>
+                    <div class="service-link" data-i18n-html="svc_link2">Ver mas <i class="fas fa-arrow-right"></i></div>
                 </div>
                 <div class="service-card reveal">
                     <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
-                    <h3>Local SEO</h3>
-                    <p>Structured data, Google Business optimization, and keyword strategy to put you at the top of local search.</p>
-                    <div class="service-link">Learn more <i class="fas fa-arrow-right"></i></div>
+                    <h3 data-i18n="svc3_title">Local SEO</h3>
+                    <p data-i18n="svc3_desc">Structured data, Google Business optimization, and keyword strategy to put you at the top of local search.</p>
+                    <div class="service-link" data-i18n-html="svc_link3">Learn more <i class="fas fa-arrow-right"></i></div>
                 </div>
                 <div class="service-card reveal">
                     <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Conversion Optimization</h3>
-                    <p>Strategic CTA placement, A/B testing, and analytics integration to squeeze maximum ROI from every visitor.</p>
-                    <div class="service-link">Learn more <i class="fas fa-arrow-right"></i></div>
+                    <h3 data-i18n="svc4_title">Conversion Optimization</h3>
+                    <p data-i18n="svc4_desc">Strategic CTA placement, A/B testing, and analytics integration to squeeze maximum ROI from every visitor.</p>
+                    <div class="service-link" data-i18n-html="svc_link4">Learn more <i class="fas fa-arrow-right"></i></div>
                 </div>
                 <div class="service-card reveal">
                     <div class="service-icon"><i class="fas fa-mobile-screen-button"></i></div>
-                    <h3>Mobile-First Development</h3>
-                    <p>70%+ of your traffic is mobile. We design for phones first, then scale up to desktop perfection.</p>
-                    <div class="service-link">Learn more <i class="fas fa-arrow-right"></i></div>
+                    <h3 data-i18n="svc5_title">Mobile-First Development</h3>
+                    <p data-i18n="svc5_desc">70%+ of your traffic is mobile. We design for phones first, then scale up to desktop perfection.</p>
+                    <div class="service-link" data-i18n-html="svc_link5">Learn more <i class="fas fa-arrow-right"></i></div>
                 </div>
                 <div class="service-card reveal">
                     <div class="service-icon"><i class="fas fa-server"></i></div>
-                    <h3>Hosting & Maintenance</h3>
-                    <p>Lightning-fast hosting, SSL, uptime monitoring, and ongoing updates so you never worry about your site.</p>
-                    <div class="service-link">Learn more <i class="fas fa-arrow-right"></i></div>
+                    <h3 data-i18n="svc6_title">Hosting & Maintenance</h3>
+                    <p data-i18n="svc6_desc">Lightning-fast hosting, SSL, uptime monitoring, and ongoing updates so you never worry about your site.</p>
+                    <div class="service-link" data-i18n-html="svc_link6">Learn more <i class="fas fa-arrow-right"></i></div>
                 </div>
             </div>
         </div>
@@ -2103,70 +2135,70 @@
     <section class="section" id="pricing">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <div class="section-label"><i class="fas fa-circle"></i> Pricing</div>
-                <h2 class="section-title">Transparent Pricing.<br>No Surprises.</h2>
-                <p class="section-desc" style="margin: 0 auto;">Every plan includes a fully custom, hand-coded website. No templates. No page builders. Pure, clean code that performs.</p>
+                <div class="section-label" data-i18n-html="price_label"><i class="fas fa-circle"></i> Pricing</div>
+                <h2 class="section-title" data-i18n-html="price_title">Transparent Pricing.<br>No Surprises.</h2>
+                <p class="section-desc" style="margin: 0 auto;" data-i18n="price_desc">Every plan includes a fully custom, hand-coded website. No templates. No page builders. Pure, clean code that performs.</p>
             </div>
 
             <div class="pricing-grid">
                 <!-- Starter -->
                 <div class="pricing-card reveal">
                     <div class="pricing-tier">Starter</div>
-                    <div class="pricing-name">Launch Site</div>
+                    <div class="pricing-name" data-i18n="p1_name">Launch Site</div>
                     <div class="pricing-price">$499 <span>setup</span></div>
                     <p class="pricing-desc" style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--accent);margin-bottom:4px;">+ $150<span style="font-size:0.8rem;color:var(--text-dim);"> /month</span></p>
-                    <p class="pricing-desc">Perfect for new businesses that need a professional online presence fast.</p>
+                    <p class="pricing-desc" data-i18n="p1_desc">Perfect for new businesses that need a professional online presence fast.</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Single-page responsive website</li>
-                        <li><i class="fas fa-check"></i> Hand-coded (no templates)</li>
-                        <li><i class="fas fa-check"></i> Mobile-first design</li>
-                        <li><i class="fas fa-check"></i> Basic SEO setup</li>
-                        <li><i class="fas fa-check"></i> Contact form integration</li>
-                        <li><i class="fas fa-check"></i> Hosting & maintenance included</li>
-                        <li><i class="fas fa-check"></i> 3-5 day delivery</li>
+                        <li data-i18n-html="p1_f1"><i class="fas fa-check"></i> Single-page responsive website</li>
+                        <li data-i18n-html="p1_f2"><i class="fas fa-check"></i> Hand-coded (no templates)</li>
+                        <li data-i18n-html="p1_f3"><i class="fas fa-check"></i> Mobile-first design</li>
+                        <li data-i18n-html="p1_f4"><i class="fas fa-check"></i> Basic SEO setup</li>
+                        <li data-i18n-html="p1_f5"><i class="fas fa-check"></i> Contact form integration</li>
+                        <li data-i18n-html="p1_f6"><i class="fas fa-check"></i> Hosting & maintenance included</li>
+                        <li data-i18n-html="p1_f7"><i class="fas fa-check"></i> 3-5 day delivery</li>
                     </ul>
-                    <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+                    <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;" data-i18n="p1_cta">Get Started</a>
                 </div>
 
                 <!-- Growth (Featured) -->
                 <div class="pricing-card featured reveal">
-                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-badge" data-i18n="badge_popular">Most Popular</div>
                     <div class="pricing-tier">Growth</div>
-                    <div class="pricing-name">Revenue Engine</div>
+                    <div class="pricing-name" data-i18n="p2_name">Revenue Engine</div>
                     <div class="pricing-price">$999 <span>setup</span></div>
                     <p class="pricing-desc" style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--accent);margin-bottom:4px;">+ $300<span style="font-size:0.8rem;color:var(--text-dim);"> /month</span></p>
-                    <p class="pricing-desc">For businesses ready to turn their website into their top lead generator.</p>
+                    <p class="pricing-desc" data-i18n="p2_desc">For businesses ready to turn their website into their top lead generator.</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Multi-page custom website</li>
-                        <li><i class="fas fa-check"></i> Conversion-optimized architecture</li>
-                        <li><i class="fas fa-check"></i> Advanced animations & interactions</li>
-                        <li><i class="fas fa-check"></i> Full local SEO & monthly optimization</li>
-                        <li><i class="fas fa-check"></i> Google Analytics 4 setup</li>
-                        <li><i class="fas fa-check"></i> Schema markup & structured data</li>
-                        <li><i class="fas fa-check"></i> Hosting, maintenance & updates included</li>
-                        <li><i class="fas fa-check"></i> 5-10 day delivery</li>
+                        <li data-i18n-html="p2_f1"><i class="fas fa-check"></i> Multi-page custom website</li>
+                        <li data-i18n-html="p2_f2"><i class="fas fa-check"></i> Conversion-optimized architecture</li>
+                        <li data-i18n-html="p2_f3"><i class="fas fa-check"></i> Advanced animations & interactions</li>
+                        <li data-i18n-html="p2_f4"><i class="fas fa-check"></i> Full local SEO & monthly optimization</li>
+                        <li data-i18n-html="p2_f5"><i class="fas fa-check"></i> Google Analytics 4 setup</li>
+                        <li data-i18n-html="p2_f6"><i class="fas fa-check"></i> Schema markup & structured data</li>
+                        <li data-i18n-html="p2_f7"><i class="fas fa-check"></i> Hosting, maintenance & updates included</li>
+                        <li data-i18n-html="p2_f8"><i class="fas fa-check"></i> 5-10 day delivery</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;">Get Your Free Quote</a>
+                    <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;" data-i18n="nav_cta">Get Your Free Quote</a>
                 </div>
 
                 <!-- Premium -->
                 <div class="pricing-card reveal">
                     <div class="pricing-tier">Premium</div>
-                    <div class="pricing-name">Full Build</div>
+                    <div class="pricing-name" data-i18n="p3_name">Full Build</div>
                     <div class="pricing-price">$2,500 <span>setup</span></div>
                     <p class="pricing-desc" style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--accent);margin-bottom:4px;">+ $500<span style="font-size:0.8rem;color:var(--text-dim);"> /month</span></p>
-                    <p class="pricing-desc">The complete package. A digital storefront that outperforms competitors at every turn.</p>
+                    <p class="pricing-desc" data-i18n="p3_desc">The complete package. A digital storefront that outperforms competitors at every turn.</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Everything in Growth</li>
-                        <li><i class="fas fa-check"></i> Custom interactive elements</li>
-                        <li><i class="fas fa-check"></i> Booking / e-commerce integration</li>
-                        <li><i class="fas fa-check"></i> Meta Pixel & call tracking setup</li>
-                        <li><i class="fas fa-check"></i> Aggressive monthly SEO strategy</li>
-                        <li><i class="fas fa-check"></i> Monthly performance reports</li>
-                        <li><i class="fas fa-check"></i> Priority hosting & dedicated support</li>
-                        <li><i class="fas fa-check"></i> 7-14 day delivery</li>
+                        <li data-i18n-html="p3_f1"><i class="fas fa-check"></i> Everything in Growth</li>
+                        <li data-i18n-html="p3_f2"><i class="fas fa-check"></i> Custom interactive elements</li>
+                        <li data-i18n-html="p3_f3"><i class="fas fa-check"></i> Booking / e-commerce integration</li>
+                        <li data-i18n-html="p3_f4"><i class="fas fa-check"></i> Meta Pixel & call tracking setup</li>
+                        <li data-i18n-html="p3_f5"><i class="fas fa-check"></i> Aggressive monthly SEO strategy</li>
+                        <li data-i18n-html="p3_f6"><i class="fas fa-check"></i> Monthly performance reports</li>
+                        <li data-i18n-html="p3_f7"><i class="fas fa-check"></i> Priority hosting & dedicated support</li>
+                        <li data-i18n-html="p3_f8"><i class="fas fa-check"></i> 7-14 day delivery</li>
                     </ul>
-                    <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Talk to Us</a>
+                    <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;" data-i18n="p3_cta">Talk to Us</a>
                 </div>
             </div>
         </div>
@@ -2176,33 +2208,33 @@
     <section class="section" id="process" style="background: var(--primary-light);">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <div class="section-label"><i class="fas fa-circle"></i> Our Process</div>
-                <h2 class="section-title">From First Call to<br>Live in Days, Not Months</h2>
+                <div class="section-label" data-i18n-html="proc_label"><i class="fas fa-circle"></i> Our Process</div>
+                <h2 class="section-title" data-i18n-html="proc_title">From First Call to<br>Live in Days, Not Months</h2>
             </div>
 
             <div class="process-grid">
                 <div class="process-step reveal">
                     <div class="process-number">01</div>
-                    <h3>Discovery Call</h3>
-                    <p>We learn your business, your customers, and your goals. 20 minutes that shape everything.</p>
+                    <h3 data-i18n="proc1_title">Discovery Call</h3>
+                    <p data-i18n="proc1_desc">We learn your business, your customers, and your goals. 20 minutes that shape everything.</p>
                     <div class="process-connector"></div>
                 </div>
                 <div class="process-step reveal">
                     <div class="process-number">02</div>
-                    <h3>Audit & Strategy</h3>
-                    <p>We tear apart your current site (or your competitors) and build a conversion blueprint.</p>
+                    <h3 data-i18n="proc2_title">Audit & Strategy</h3>
+                    <p data-i18n="proc2_desc">We tear apart your current site (or your competitors) and build a conversion blueprint.</p>
                     <div class="process-connector"></div>
                 </div>
                 <div class="process-step reveal">
                     <div class="process-number">03</div>
-                    <h3>Build & Refine</h3>
-                    <p>Hand-coded, pixel-perfect, tested across every device. You get to review before we launch.</p>
+                    <h3 data-i18n="proc3_title">Build & Refine</h3>
+                    <p data-i18n="proc3_desc">Hand-coded, pixel-perfect, tested across every device. You get to review before we launch.</p>
                     <div class="process-connector"></div>
                 </div>
                 <div class="process-step reveal">
                     <div class="process-number">04</div>
-                    <h3>Launch & Optimize</h3>
-                    <p>We go live, connect analytics, and begin tracking performance from day one.</p>
+                    <h3 data-i18n="proc4_title">Launch & Optimize</h3>
+                    <p data-i18n="proc4_desc">We go live, connect analytics, and begin tracking performance from day one.</p>
                 </div>
             </div>
         </div>
@@ -2212,9 +2244,9 @@
     <section class="section" id="testimonials">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <div class="section-label"><i class="fas fa-circle"></i> Results</div>
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-desc" style="margin: 0 auto;">Real businesses. Real results. These are the sites that pay for themselves.</p>
+                <div class="section-label" data-i18n-html="test_label"><i class="fas fa-circle"></i> Results</div>
+                <h2 class="section-title" data-i18n="test_title">What Our Clients Say</h2>
+                <p class="section-desc" style="margin: 0 auto;" data-i18n="test_desc">Real businesses. Real results. These are the sites that pay for themselves.</p>
             </div>
 
             <div class="testimonials-grid">
@@ -2277,7 +2309,7 @@
     <!-- ==================== PARTNER / COLLAB BAR ==================== -->
     <section class="partner-section">
         <div class="container">
-            <p class="partner-label">Our Founder Has Worked With</p>
+            <p class="partner-label" data-i18n="partner_label">Our Founder Has Worked With</p>
             <div class="partner-logos">
                 <div class="partner-logo"><i class="fab fa-youtube"></i> MrBeast</div>
                 <div class="partner-logo"><i class="fab fa-youtube"></i> Jake Paul</div>
@@ -2292,9 +2324,9 @@
     <section class="section">
         <div class="container">
             <div class="cta-banner reveal">
-                <h2>Ready to Stop Losing Customers<br>to a Bad Website?</h2>
-                <p>Book a free 20-minute strategy call. We will show you exactly where your current site is leaving money on the table.</p>
-                <a href="#contact" class="btn-primary"><i class="fas fa-phone"></i> Book Your Free Call</a>
+                <h2 data-i18n-html="cta_h2">Ready to Stop Losing Customers<br>to a Bad Website?</h2>
+                <p data-i18n="cta_p">Book a free 20-minute strategy call. We will show you exactly where your current site is leaving money on the table.</p>
+                <a href="#contact" class="btn-primary" data-i18n-html="cta_btn"><i class="fas fa-phone"></i> Book Your Free Call</a>
             </div>
         </div>
     </section>
@@ -2303,42 +2335,42 @@
     <section class="section" id="faq" style="background: var(--primary-light);">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <div class="section-label"><i class="fas fa-circle"></i> FAQ</div>
-                <h2 class="section-title">Questions? We Have Answers.</h2>
+                <div class="section-label" data-i18n-html="faq_label"><i class="fas fa-circle"></i> FAQ</div>
+                <h2 class="section-title" data-i18n="faq_title">Questions? We Have Answers.</h2>
             </div>
 
             <div class="faq-list">
                 <div class="faq-item reveal">
-                    <button class="faq-question">How long does it take to build my website? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Most projects are delivered within 5-10 business days. Our Starter sites can be ready in as few as 3 days. We move fast without cutting corners because every site is hand-coded by our team, not dragged and dropped in a page builder.</div></div>
+                    <button class="faq-question" data-i18n-html="faq1_q">How long does it take to build my website? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq1_a">Most projects are delivered within 5-10 business days. Our Starter sites can be ready in as few as 3 days. We move fast without cutting corners because every site is hand-coded by our team, not dragged and dropped in a page builder.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">Do I need to provide my own content and photos? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">We work with what you have. We pull all existing content from your current site, optimize it for conversion and SEO, and rebuild it into a premium experience. If you need professional photography or copywriting, we offer that as an add-on service.</div></div>
+                    <button class="faq-question" data-i18n-html="faq2_q">Do I need to provide my own content and photos? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq2_a">We work with what you have. We pull all existing content from your current site, optimize it for conversion and SEO, and rebuild it into a premium experience. If you need professional photography or copywriting, we offer that as an add-on service.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">Will my website work on mobile phones? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Every site we build is fully responsive and tested across all devices and screen sizes. Over 70% of local business traffic comes from mobile devices, so we actually design for mobile first, then scale up to desktop. Your site will look incredible on any screen.</div></div>
+                    <button class="faq-question" data-i18n-html="faq3_q">Will my website work on mobile phones? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq3_a">Every site we build is fully responsive and tested across all devices and screen sizes. Over 70% of local business traffic comes from mobile devices, so we actually design for mobile first, then scale up to desktop. Your site will look incredible on any screen.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">Do you handle hosting? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Yes. We provide fast, reliable hosting included with every plan for the first year. Your site loads in under 2 seconds with no shared hosting slowdowns. After the first year, hosting is available at a low monthly rate, or we can deploy to your own server if you prefer.</div></div>
+                    <button class="faq-question" data-i18n-html="faq4_q">Do you handle hosting? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq4_a">Yes. We provide fast, reliable hosting included with every plan for the first year. Your site loads in under 2 seconds with no shared hosting slowdowns. After the first year, hosting is available at a low monthly rate, or we can deploy to your own server if you prefer.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">Can you help me rank on Google? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">SEO is built into every site from day one. We implement structured data, optimized meta tags, local business schema, and keyword-targeted content architecture. Our Growth and Premium plans include advanced SEO strategy including Google Business Profile optimization and local citation building.</div></div>
+                    <button class="faq-question" data-i18n-html="faq5_q">Can you help me rank on Google? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq5_a">SEO is built into every site from day one. We implement structured data, optimized meta tags, local business schema, and keyword-targeted content architecture. Our Growth and Premium plans include advanced SEO strategy including Google Business Profile optimization and local citation building.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">What if I already have a website? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Even better. We audit your current site, identify exactly where it is losing leads and revenue, and rebuild it from the ground up to convert. Most of our clients see a 2-5x increase in inquiries after a Loft redesign. We preserve everything that works and fix everything that does not.</div></div>
+                    <button class="faq-question" data-i18n-html="faq6_q">What if I already have a website? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq6_a">Even better. We audit your current site, identify exactly where it is losing leads and revenue, and rebuild it from the ground up to convert. Most of our clients see a 2-5x increase in inquiries after a Loft redesign. We preserve everything that works and fix everything that does not.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">Why should I choose Loft over a freelancer or a DIY builder? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Freelancers build pages. DIY builders give you templates. We build revenue engines. Our team has generated over 15 billion views online and worked with the biggest names in digital content. We understand what captures attention and drives action at a level that template-based solutions simply cannot match. Every pixel is conversion-optimized.</div></div>
+                    <button class="faq-question" data-i18n-html="faq7_q">Why should I choose Loft over a freelancer or a DIY builder? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq7_a">Freelancers build pages. DIY builders give you templates. We build revenue engines. Our team has generated over 15 billion views online and worked with the biggest names in digital content. We understand what captures attention and drives action at a level that template-based solutions simply cannot match. Every pixel is conversion-optimized.</div></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question">Do you offer payment plans? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Yes. We offer flexible payment plans on our Growth and Premium packages. Typically 50% upfront and 50% on delivery. For Premium builds, we also offer monthly installment options. We want to make it easy for your business to get the site it deserves.</div></div>
+                    <button class="faq-question" data-i18n-html="faq8_q">Do you offer payment plans? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq8_a">Yes. We offer flexible payment plans on our Growth and Premium packages. Typically 50% upfront and 50% on delivery. For Premium builds, we also offer monthly installment options. We want to make it easy for your business to get the site it deserves.</div></div>
                 </div>
             </div>
         </div>
@@ -2348,9 +2380,9 @@
     <section class="section" id="contact">
         <div class="container">
             <div class="reveal" style="text-align:center;">
-                <div class="section-label"><i class="fas fa-circle"></i> Get Started</div>
-                <h2 class="section-title">Let's Build Something<br>That Makes You Money</h2>
-                <p class="section-desc" style="margin: 0 auto;">Fill out the form or call us directly. We respond within 2 hours during business hours.</p>
+                <div class="section-label" data-i18n-html="contact_label"><i class="fas fa-circle"></i> Get Started</div>
+                <h2 class="section-title" data-i18n-html="contact_title">Let's Build Something<br>That Makes You Money</h2>
+                <p class="section-desc" style="margin: 0 auto;" data-i18n="contact_desc">Fill out the form or call us directly. We respond within 2 hours during business hours.</p>
             </div>
 
             <div class="contact-grid">
@@ -2358,25 +2390,25 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" placeholder=" " required>
-                            <label for="name">Your Name</label>
+                            <label for="name" data-i18n="form_name">Your Name</label>
                         </div>
                         <div class="form-group">
                             <input type="email" id="email" placeholder=" " required>
-                            <label for="email">Email Address</label>
+                            <label for="email" data-i18n="form_email">Email Address</label>
                         </div>
                         <div class="form-group">
                             <input type="tel" id="phone" placeholder=" ">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone" data-i18n="form_phone">Phone Number</label>
                         </div>
                         <div class="form-group">
                             <input type="url" id="website" placeholder=" ">
-                            <label for="website">Current Website URL (if you have one)</label>
+                            <label for="website" data-i18n="form_website">Current Website URL (if you have one)</label>
                         </div>
                         <div class="form-group">
                             <textarea id="message" placeholder=" " required></textarea>
-                            <label for="message">Tell us about your business</label>
+                            <label for="message" data-i18n="form_message">Tell us about your business</label>
                         </div>
-                        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" data-i18n-html="form_submit">
                             <i class="fas fa-paper-plane"></i>
                             Get Your Free Quote
                         </button>
@@ -2387,7 +2419,7 @@
                     <div class="contact-info-item">
                         <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
                         <div>
-                            <h4>Call Us</h4>
+                            <h4 data-i18n="info_call">Call Us</h4>
                             <a href="tel:+13055551638">(305) 555-LOFT</a>
                         </div>
                     </div>
@@ -2401,15 +2433,15 @@
                     <div class="contact-info-item">
                         <div class="contact-info-icon"><i class="fas fa-location-dot"></i></div>
                         <div>
-                            <h4>Location</h4>
+                            <h4 data-i18n="info_location">Location</h4>
                             <p>Miami, FL & Los Angeles, CA</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
                         <div>
-                            <h4>Hours</h4>
-                            <p>Mon - Fri: 9AM - 7PM EST<br>Sat: 10AM - 4PM EST</p>
+                            <h4 data-i18n="info_hours">Hours</h4>
+                            <p data-i18n-html="info_hours_val">Mon - Fri: 9AM - 7PM EST<br>Sat: 10AM - 4PM EST</p>
                         </div>
                     </div>
 
@@ -2434,7 +2466,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="nav-logo">L<span>.</span>oft</a>
-                    <p>Premium websites for local businesses. Built by creators who understand attention. Designed to convert visitors into customers.</p>
+                    <p data-i18n="footer_desc">Premium websites for local businesses. Built by creators who understand attention. Designed to convert visitors into customers.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
@@ -2464,7 +2496,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Loft. All rights reserved. Built with precision in Miami.</p>
+                <p data-i18n="footer_copy">&copy; 2026 Loft. All rights reserved. Built with precision in Miami.</p>
                 <div class="footer-socials">
                     <a href="https://www.youtube.com/@matthewjgl" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="https://www.tiktok.com/@matthewjgl" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -2663,20 +2695,6 @@
             });
         });
 
-        // ===== FORM SUBMISSION =====
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
-            const original = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-            btn.style.background = '#28c840';
-            setTimeout(() => {
-                btn.innerHTML = original;
-                btn.style.background = '';
-                e.target.reset();
-            }, 3000);
-        });
-
         // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -2688,6 +2706,253 @@
                     window.scrollTo({ top: targetPos, behavior: 'smooth' });
                 }
             });
+        });
+
+        // ===== LANGUAGE TOGGLE =====
+        const i18n = {
+            en: {
+                nav_about: 'About', nav_services: 'Services', nav_pricing: 'Pricing', nav_process: 'Process', nav_contact: 'Contact',
+                nav_cta: 'Get Your Free Quote',
+                hero_badge: '<i class="fas fa-bolt"></i> Now Accepting New Clients in Miami & LA',
+                hero_h1: 'We Build Websites That <span class="highlight">Print Money</span>',
+                hero_sub: 'Your website should be your hardest-working employee. We build <strong>conversion-optimized</strong>, premium sites for local businesses backed by a team that has generated <strong>15 billion+ views</strong> online.',
+                hero_cta1: '<i class="fas fa-rocket"></i> Get Your Free Quote',
+                hero_cta2: '<i class="fas fa-arrow-down"></i> See What We Build',
+                stat1: 'Views Generated Online', stat2: 'YouTube Subscribers', stat3: 'Social Following', stat4: 'Day Delivery',
+                about_label: '<i class="fas fa-circle"></i> Who We Are',
+                about_title: 'Built by Creators.<br>Designed to Convert.',
+                about_desc: 'We are not a generic web agency. We are content creators who understand attention economics at a level most designers never will.',
+                about_p1: '<strong>Loft was founded on one insight:</strong> the people who know how to capture 15 billion eyeballs online are the same people who should be building your website. Every scroll, every hover state, every CTA placement is informed by real data from audiences measured in the millions.',
+                about_p2: 'Our co-founder <strong>Matthew Gonzalez</strong> (matthewjgl) built his audience to 719K+ YouTube subscribers in his first month and has produced content generating <strong>15 billion+ views</strong> as a Senior Producer. He has worked with MrBeast, Jake Paul, and the biggest names in digital content. He is also the CEO of Vedit, a content creation platform.',
+                about_p3: 'Combined with <strong>Aiden Camacho\'s</strong> expertise in conversion architecture and front-end engineering, Loft delivers websites that do not just look premium, they <strong>generate revenue</strong>.',
+                hl1_title: 'Attention Experts', hl1_desc: 'We know what makes people stop scrolling and start clicking.',
+                hl2_title: 'Hand-Coded', hl2_desc: 'No templates. Every site is custom-built from scratch.',
+                hl3_title: 'SEO-Native', hl3_desc: 'Structured data and local SEO baked into every build.',
+                hl4_title: 'Performance-First', hl4_desc: 'Sub-second load times. Zero bloat. Pure speed.',
+                founder1_role: 'Co-Founder / Creative Director', founder2_role: 'Co-Founder / Lead Engineer',
+                card_stat1: 'Views Produced', card_stat2: 'Social Reach', card_stat3: 'Collaborated With',
+                svc_label: '<i class="fas fa-circle"></i> What We Build',
+                svc_title: 'Everything Your Business<br>Needs to Dominate Online',
+                svc_desc: 'From single-page landing sites to full conversion ecosystems. Each one hand-built, conversion-optimized, and designed to outperform.',
+                svc1_title: 'Website Design & Build', svc1_desc: 'Premium, hand-coded websites that load fast, rank high, and convert visitors into paying customers.',
+                svc2_title: 'Website Redesign', svc2_desc: 'We audit your current site, find where it leaks leads, and rebuild it from scratch to multiply your inquiries.',
+                svc3_title: 'Local SEO', svc3_desc: 'Structured data, Google Business optimization, and keyword strategy to put you at the top of local search.',
+                svc4_title: 'Conversion Optimization', svc4_desc: 'Strategic CTA placement, A/B testing, and analytics integration to squeeze maximum ROI from every visitor.',
+                svc5_title: 'Mobile-First Development', svc5_desc: '70%+ of your traffic is mobile. We design for phones first, then scale up to desktop perfection.',
+                svc6_title: 'Hosting & Maintenance', svc6_desc: 'Lightning-fast hosting, SSL, uptime monitoring, and ongoing updates so you never worry about your site.',
+                svc_link1: 'Learn more <i class="fas fa-arrow-right"></i>', svc_link2: 'Learn more <i class="fas fa-arrow-right"></i>',
+                svc_link3: 'Learn more <i class="fas fa-arrow-right"></i>', svc_link4: 'Learn more <i class="fas fa-arrow-right"></i>',
+                svc_link5: 'Learn more <i class="fas fa-arrow-right"></i>', svc_link6: 'Learn more <i class="fas fa-arrow-right"></i>',
+                price_label: '<i class="fas fa-circle"></i> Pricing',
+                price_title: 'Transparent Pricing.<br>No Surprises.',
+                price_desc: 'Every plan includes a fully custom, hand-coded website. No templates. No page builders. Pure, clean code that performs.',
+                p1_name: 'Launch Site', p1_desc: 'Perfect for new businesses that need a professional online presence fast.',
+                p1_f1: '<i class="fas fa-check"></i> Single-page responsive website', p1_f2: '<i class="fas fa-check"></i> Hand-coded (no templates)',
+                p1_f3: '<i class="fas fa-check"></i> Mobile-first design', p1_f4: '<i class="fas fa-check"></i> Basic SEO setup',
+                p1_f5: '<i class="fas fa-check"></i> Contact form integration', p1_f6: '<i class="fas fa-check"></i> Hosting & maintenance included',
+                p1_f7: '<i class="fas fa-check"></i> 3-5 day delivery', p1_cta: 'Get Started',
+                badge_popular: 'Most Popular',
+                p2_name: 'Revenue Engine', p2_desc: 'For businesses ready to turn their website into their top lead generator.',
+                p2_f1: '<i class="fas fa-check"></i> Multi-page custom website', p2_f2: '<i class="fas fa-check"></i> Conversion-optimized architecture',
+                p2_f3: '<i class="fas fa-check"></i> Advanced animations & interactions', p2_f4: '<i class="fas fa-check"></i> Full local SEO & monthly optimization',
+                p2_f5: '<i class="fas fa-check"></i> Google Analytics 4 setup', p2_f6: '<i class="fas fa-check"></i> Schema markup & structured data',
+                p2_f7: '<i class="fas fa-check"></i> Hosting, maintenance & updates included', p2_f8: '<i class="fas fa-check"></i> 5-10 day delivery',
+                p3_name: 'Full Build', p3_desc: 'The complete package. A digital storefront that outperforms competitors at every turn.',
+                p3_f1: '<i class="fas fa-check"></i> Everything in Growth', p3_f2: '<i class="fas fa-check"></i> Custom interactive elements',
+                p3_f3: '<i class="fas fa-check"></i> Booking / e-commerce integration', p3_f4: '<i class="fas fa-check"></i> Meta Pixel & call tracking setup',
+                p3_f5: '<i class="fas fa-check"></i> Aggressive monthly SEO strategy', p3_f6: '<i class="fas fa-check"></i> Monthly performance reports',
+                p3_f7: '<i class="fas fa-check"></i> Priority hosting & dedicated support', p3_f8: '<i class="fas fa-check"></i> 7-14 day delivery',
+                p3_cta: 'Talk to Us',
+                proc_label: '<i class="fas fa-circle"></i> Our Process', proc_title: 'From First Call to<br>Live in Days, Not Months',
+                proc1_title: 'Discovery Call', proc1_desc: 'We learn your business, your customers, and your goals. 20 minutes that shape everything.',
+                proc2_title: 'Audit & Strategy', proc2_desc: 'We tear apart your current site (or your competitors) and build a conversion blueprint.',
+                proc3_title: 'Build & Refine', proc3_desc: 'Hand-coded, pixel-perfect, tested across every device. You get to review before we launch.',
+                proc4_title: 'Launch & Optimize', proc4_desc: 'We go live, connect analytics, and begin tracking performance from day one.',
+                test_label: '<i class="fas fa-circle"></i> Results', test_title: 'What Our Clients Say',
+                test_desc: 'Real businesses. Real results. These are the sites that pay for themselves.',
+                partner_label: 'Our Founder Has Worked With',
+                cta_h2: 'Ready to Stop Losing Customers<br>to a Bad Website?',
+                cta_p: 'Book a free 20-minute strategy call. We will show you exactly where your current site is leaving money on the table.',
+                cta_btn: '<i class="fas fa-phone"></i> Book Your Free Call',
+                faq_label: '<i class="fas fa-circle"></i> FAQ', faq_title: 'Questions? We Have Answers.',
+                faq1_q: 'How long does it take to build my website? <i class="fas fa-chevron-down"></i>',
+                faq1_a: 'Most projects are delivered within 5-10 business days. Our Starter sites can be ready in as few as 3 days. We move fast without cutting corners because every site is hand-coded by our team, not dragged and dropped in a page builder.',
+                faq2_q: 'Do I need to provide my own content and photos? <i class="fas fa-chevron-down"></i>',
+                faq2_a: 'We work with what you have. We pull all existing content from your current site, optimize it for conversion and SEO, and rebuild it into a premium experience. If you need professional photography or copywriting, we offer that as an add-on service.',
+                faq3_q: 'Will my website work on mobile phones? <i class="fas fa-chevron-down"></i>',
+                faq3_a: 'Every site we build is fully responsive and tested across all devices and screen sizes. Over 70% of local business traffic comes from mobile devices, so we actually design for mobile first, then scale up to desktop. Your site will look incredible on any screen.',
+                faq4_q: 'Do you handle hosting? <i class="fas fa-chevron-down"></i>',
+                faq4_a: 'Yes. We provide fast, reliable hosting included with every plan for the first year. Your site loads in under 2 seconds with no shared hosting slowdowns. After the first year, hosting is available at a low monthly rate, or we can deploy to your own server if you prefer.',
+                faq5_q: 'Can you help me rank on Google? <i class="fas fa-chevron-down"></i>',
+                faq5_a: 'SEO is built into every site from day one. We implement structured data, optimized meta tags, local business schema, and keyword-targeted content architecture. Our Growth and Premium plans include advanced SEO strategy including Google Business Profile optimization and local citation building.',
+                faq6_q: 'What if I already have a website? <i class="fas fa-chevron-down"></i>',
+                faq6_a: 'Even better. We audit your current site, identify exactly where it is losing leads and revenue, and rebuild it from the ground up to convert. Most of our clients see a 2-5x increase in inquiries after a Loft redesign. We preserve everything that works and fix everything that does not.',
+                faq7_q: 'Why should I choose Loft over a freelancer or a DIY builder? <i class="fas fa-chevron-down"></i>',
+                faq7_a: 'Freelancers build pages. DIY builders give you templates. We build revenue engines. Our team has generated over 15 billion views online and worked with the biggest names in digital content. We understand what captures attention and drives action at a level that template-based solutions simply cannot match. Every pixel is conversion-optimized.',
+                faq8_q: 'Do you offer payment plans? <i class="fas fa-chevron-down"></i>',
+                faq8_a: 'Yes. We offer flexible payment plans on our Growth and Premium packages. Typically 50% upfront and 50% on delivery. For Premium builds, we also offer monthly installment options. We want to make it easy for your business to get the site it deserves.',
+                contact_label: '<i class="fas fa-circle"></i> Get Started', contact_title: 'Let\'s Build Something<br>That Makes You Money',
+                contact_desc: 'Fill out the form or call us directly. We respond within 2 hours during business hours.',
+                form_name: 'Your Name', form_email: 'Email Address', form_phone: 'Phone Number',
+                form_website: 'Current Website URL (if you have one)', form_message: 'Tell us about your business',
+                form_submit: '<i class="fas fa-paper-plane"></i> Get Your Free Quote',
+                info_call: 'Call Us', info_location: 'Location', info_hours: 'Hours',
+                info_hours_val: 'Mon - Fri: 9AM - 7PM EST<br>Sat: 10AM - 4PM EST',
+                footer_desc: 'Premium websites for local businesses. Built by creators who understand attention. Designed to convert visitors into customers.',
+                footer_copy: '&copy; 2026 Loft. All rights reserved. Built with precision in Miami.',
+                form_sent: '<i class="fas fa-check"></i> Message Sent!'
+            },
+            es: {
+                nav_about: 'Nosotros', nav_services: 'Servicios', nav_pricing: 'Precios', nav_process: 'Proceso', nav_contact: 'Contacto',
+                nav_cta: 'Cotiza Gratis',
+                hero_badge: '<i class="fas fa-bolt"></i> Aceptando Nuevos Clientes en Miami y LA',
+                hero_h1: 'Creamos Sitios Web Que <span class="highlight">Generan Dinero</span>',
+                hero_sub: 'Tu pagina web deberia ser tu empleado mas trabajador. Creamos sitios <strong>optimizados para convertir</strong>, premium, para negocios locales respaldados por un equipo que ha generado <strong>mas de 15 mil millones de vistas</strong> en linea.',
+                hero_cta1: '<i class="fas fa-rocket"></i> Cotiza Gratis',
+                hero_cta2: '<i class="fas fa-arrow-down"></i> Mira Lo Que Hacemos',
+                stat1: 'Vistas Generadas Online', stat2: 'Suscriptores en YouTube', stat3: 'Seguidores Totales', stat4: 'Dias de Entrega',
+                about_label: '<i class="fas fa-circle"></i> Quienes Somos',
+                about_title: 'Creado por Creadores.<br>Disenado para Convertir.',
+                about_desc: 'No somos una agencia web generica. Somos creadores de contenido que entienden la economia de la atencion a un nivel que la mayoria de disenadores nunca van a alcanzar.',
+                about_p1: '<strong>Loft nacio de una sola idea:</strong> las personas que saben como captar 15 mil millones de miradas en internet son las mismas que deberian estar construyendo tu pagina web. Cada scroll, cada efecto, cada boton esta informado por datos reales de audiencias medidas en millones.',
+                about_p2: 'Nuestro co-fundador <strong>Matthew Gonzalez</strong> (matthewjgl) llego a 719K+ suscriptores en YouTube en su primer mes y ha producido contenido que ha generado <strong>mas de 15 mil millones de vistas</strong> como Senior Producer. Ha trabajado con MrBeast, Jake Paul, y los nombres mas grandes del contenido digital. Tambien es CEO de Vedit, una plataforma de creacion de contenido.',
+                about_p3: 'Combinado con la experiencia de <strong>Aiden Camacho</strong> en arquitectura de conversion e ingenieria front-end, Loft entrega sitios web que no solo se ven premium, sino que <strong>generan ingresos</strong>.',
+                hl1_title: 'Expertos en Atencion', hl1_desc: 'Sabemos que hace que la gente deje de scrollear y empiece a hacer clic.',
+                hl2_title: 'Codigo a Mano', hl2_desc: 'Nada de templates. Cada sitio se construye desde cero.',
+                hl3_title: 'SEO Integrado', hl3_desc: 'Datos estructurados y SEO local integrados en cada proyecto.',
+                hl4_title: 'Rendimiento Primero', hl4_desc: 'Carga en menos de un segundo. Cero relleno. Pura velocidad.',
+                founder1_role: 'Co-Fundador / Director Creativo', founder2_role: 'Co-Fundador / Ingeniero Principal',
+                card_stat1: 'Vistas Producidas', card_stat2: 'Alcance Social', card_stat3: 'Colaboro Con',
+                svc_label: '<i class="fas fa-circle"></i> Lo Que Hacemos',
+                svc_title: 'Todo Lo Que Tu Negocio<br>Necesita Para Dominar Online',
+                svc_desc: 'Desde landing pages hasta ecosistemas completos de conversion. Cada uno hecho a mano, optimizado para convertir, y disenado para superar a la competencia.',
+                svc1_title: 'Diseno y Creacion Web', svc1_desc: 'Sitios web premium, escritos a mano, que cargan rapido, rankean alto, y convierten visitantes en clientes que pagan.',
+                svc2_title: 'Rediseno Web', svc2_desc: 'Auditamos tu sitio actual, encontramos donde pierde clientes, y lo reconstruimos desde cero para multiplicar tus consultas.',
+                svc3_title: 'SEO Local', svc3_desc: 'Datos estructurados, optimizacion de Google Business, y estrategia de palabras clave para ponerte en el top de la busqueda local.',
+                svc4_title: 'Optimizacion de Conversion', svc4_desc: 'Ubicacion estrategica de CTAs, pruebas A/B, e integracion de analiticas para sacar el maximo ROI de cada visitante.',
+                svc5_title: 'Desarrollo Mobile-First', svc5_desc: 'Mas del 70% de tu trafico es movil. Disenamos para celulares primero, despues escalamos a desktop.',
+                svc6_title: 'Hosting y Mantenimiento', svc6_desc: 'Hosting ultra rapido, SSL, monitoreo de uptime, y actualizaciones continuas para que nunca te preocupes por tu sitio.',
+                svc_link1: 'Ver mas <i class="fas fa-arrow-right"></i>', svc_link2: 'Ver mas <i class="fas fa-arrow-right"></i>',
+                svc_link3: 'Ver mas <i class="fas fa-arrow-right"></i>', svc_link4: 'Ver mas <i class="fas fa-arrow-right"></i>',
+                svc_link5: 'Ver mas <i class="fas fa-arrow-right"></i>', svc_link6: 'Ver mas <i class="fas fa-arrow-right"></i>',
+                price_label: '<i class="fas fa-circle"></i> Precios',
+                price_title: 'Precios Transparentes.<br>Sin Sorpresas.',
+                price_desc: 'Cada plan incluye un sitio web totalmente personalizado, escrito a mano. Nada de templates. Nada de page builders. Codigo limpio que rinde.',
+                p1_name: 'Sitio Inicial', p1_desc: 'Perfecto para negocios nuevos que necesitan una presencia profesional online rapido.',
+                p1_f1: '<i class="fas fa-check"></i> Sitio web responsive de una pagina', p1_f2: '<i class="fas fa-check"></i> Codigo a mano (sin templates)',
+                p1_f3: '<i class="fas fa-check"></i> Diseno mobile-first', p1_f4: '<i class="fas fa-check"></i> Configuracion basica de SEO',
+                p1_f5: '<i class="fas fa-check"></i> Formulario de contacto integrado', p1_f6: '<i class="fas fa-check"></i> Hosting y mantenimiento incluido',
+                p1_f7: '<i class="fas fa-check"></i> Entrega en 3-5 dias', p1_cta: 'Empezar',
+                badge_popular: 'Mas Popular',
+                p2_name: 'Motor de Ingresos', p2_desc: 'Para negocios listos para convertir su sitio web en su mejor generador de clientes.',
+                p2_f1: '<i class="fas fa-check"></i> Sitio web personalizado multi-pagina', p2_f2: '<i class="fas fa-check"></i> Arquitectura optimizada para convertir',
+                p2_f3: '<i class="fas fa-check"></i> Animaciones e interacciones avanzadas', p2_f4: '<i class="fas fa-check"></i> SEO local completo y optimizacion mensual',
+                p2_f5: '<i class="fas fa-check"></i> Configuracion de Google Analytics 4', p2_f6: '<i class="fas fa-check"></i> Schema markup y datos estructurados',
+                p2_f7: '<i class="fas fa-check"></i> Hosting, mantenimiento y updates incluidos', p2_f8: '<i class="fas fa-check"></i> Entrega en 5-10 dias',
+                p3_name: 'Paquete Completo', p3_desc: 'El paquete completo. Un escaparate digital que supera a la competencia en todo.',
+                p3_f1: '<i class="fas fa-check"></i> Todo lo de Growth', p3_f2: '<i class="fas fa-check"></i> Elementos interactivos personalizados',
+                p3_f3: '<i class="fas fa-check"></i> Integracion de reservas / e-commerce', p3_f4: '<i class="fas fa-check"></i> Configuracion de Meta Pixel y rastreo de llamadas',
+                p3_f5: '<i class="fas fa-check"></i> Estrategia SEO mensual agresiva', p3_f6: '<i class="fas fa-check"></i> Reportes de rendimiento mensuales',
+                p3_f7: '<i class="fas fa-check"></i> Hosting prioritario y soporte dedicado', p3_f8: '<i class="fas fa-check"></i> Entrega en 7-14 dias',
+                p3_cta: 'Habla Con Nosotros',
+                proc_label: '<i class="fas fa-circle"></i> Nuestro Proceso', proc_title: 'De la Primera Llamada<br>a En Vivo en Dias, No Meses',
+                proc1_title: 'Llamada de Descubrimiento', proc1_desc: 'Conocemos tu negocio, tus clientes, y tus metas. 20 minutos que definen todo.',
+                proc2_title: 'Auditoria y Estrategia', proc2_desc: 'Analizamos tu sitio actual (o el de tu competencia) y creamos un plan de conversion.',
+                proc3_title: 'Construccion y Refinamiento', proc3_desc: 'Codigo a mano, pixel-perfect, probado en cada dispositivo. Tu lo revisas antes de lanzar.',
+                proc4_title: 'Lanzamiento y Optimizacion', proc4_desc: 'Salimos en vivo, conectamos analiticas, y empezamos a rastrear el rendimiento desde el dia uno.',
+                test_label: '<i class="fas fa-circle"></i> Resultados', test_title: 'Lo Que Dicen Nuestros Clientes',
+                test_desc: 'Negocios reales. Resultados reales. Estos son los sitios que se pagan solos.',
+                partner_label: 'Nuestro Fundador Ha Trabajado Con',
+                cta_h2: 'Listo Para Dejar de Perder Clientes<br>Por Una Mala Pagina Web?',
+                cta_p: 'Agenda una llamada de estrategia gratis de 20 minutos. Te mostramos exactamente donde tu sitio actual esta dejando dinero en la mesa.',
+                cta_btn: '<i class="fas fa-phone"></i> Agenda Tu Llamada Gratis',
+                faq_label: '<i class="fas fa-circle"></i> FAQ', faq_title: 'Preguntas? Tenemos Respuestas.',
+                faq1_q: 'Cuanto tiempo toma construir mi pagina web? <i class="fas fa-chevron-down"></i>',
+                faq1_a: 'La mayoria de los proyectos se entregan en 5-10 dias habiles. Nuestros sitios Starter pueden estar listos en solo 3 dias. Nos movemos rapido sin cortar esquinas porque cada sitio esta escrito a mano por nuestro equipo, no arrastrado y soltado en un page builder.',
+                faq2_q: 'Necesito dar mi propio contenido y fotos? <i class="fas fa-chevron-down"></i>',
+                faq2_a: 'Trabajamos con lo que tengas. Sacamos todo el contenido existente de tu sitio actual, lo optimizamos para conversion y SEO, y lo reconstruimos en una experiencia premium. Si necesitas fotografia profesional o redaccion, lo ofrecemos como servicio adicional.',
+                faq3_q: 'Mi pagina web va a funcionar en celulares? <i class="fas fa-chevron-down"></i>',
+                faq3_a: 'Cada sitio que construimos es totalmente responsive y probado en todos los dispositivos y tamanos de pantalla. Mas del 70% del trafico de negocios locales viene de celulares, asi que disenamos para movil primero, y despues escalamos a desktop. Tu sitio se va a ver increible en cualquier pantalla.',
+                faq4_q: 'Ustedes manejan el hosting? <i class="fas fa-chevron-down"></i>',
+                faq4_a: 'Si. Ofrecemos hosting rapido y confiable incluido en cada plan durante el primer ano. Tu sitio carga en menos de 2 segundos sin las demoras del hosting compartido. Despues del primer ano, el hosting esta disponible a una tarifa mensual baja, o podemos deployer en tu propio servidor si prefieres.',
+                faq5_q: 'Me pueden ayudar a rankear en Google? <i class="fas fa-chevron-down"></i>',
+                faq5_a: 'El SEO esta integrado en cada sitio desde el dia uno. Implementamos datos estructurados, meta tags optimizados, schema de negocio local, y arquitectura de contenido enfocada en keywords. Nuestros planes Growth y Premium incluyen estrategia SEO avanzada incluyendo optimizacion de Google Business Profile y construccion de citaciones locales.',
+                faq6_q: 'Y si ya tengo una pagina web? <i class="fas fa-chevron-down"></i>',
+                faq6_a: 'Mejor aun. Auditamos tu sitio actual, identificamos exactamente donde esta perdiendo leads e ingresos, y lo reconstruimos desde cero para que convierta. La mayoria de nuestros clientes ven un aumento de 2-5x en consultas despues de un rediseno de Loft. Preservamos todo lo que funciona y arreglamos todo lo que no.',
+                faq7_q: 'Por que elegir Loft en vez de un freelancer o un builder DIY? <i class="fas fa-chevron-down"></i>',
+                faq7_a: 'Los freelancers hacen paginas. Los builders DIY te dan templates. Nosotros construimos motores de ingresos. Nuestro equipo ha generado mas de 15 mil millones de vistas online y ha trabajado con los nombres mas grandes del contenido digital. Entendemos lo que captura la atencion y genera accion a un nivel que las soluciones basadas en templates simplemente no pueden igualar. Cada pixel esta optimizado para convertir.',
+                faq8_q: 'Ofrecen planes de pago? <i class="fas fa-chevron-down"></i>',
+                faq8_a: 'Si. Ofrecemos planes de pago flexibles en nuestros paquetes Growth y Premium. Tipicamente 50% al inicio y 50% en la entrega. Para los builds Premium, tambien ofrecemos opciones de cuotas mensuales. Queremos que sea facil para tu negocio tener el sitio que se merece.',
+                contact_label: '<i class="fas fa-circle"></i> Empieza Ya', contact_title: 'Vamos a Construir Algo<br>Que Te Genere Dinero',
+                contact_desc: 'Llena el formulario o llamanos directo. Respondemos en menos de 2 horas en horario laboral.',
+                form_name: 'Tu Nombre', form_email: 'Correo Electronico', form_phone: 'Numero de Telefono',
+                form_website: 'URL de Tu Sitio Web Actual (si tienes uno)', form_message: 'Cuentanos sobre tu negocio',
+                form_submit: '<i class="fas fa-paper-plane"></i> Cotiza Gratis',
+                info_call: 'Llamanos', info_location: 'Ubicacion', info_hours: 'Horario',
+                info_hours_val: 'Lun - Vie: 9AM - 7PM EST<br>Sab: 10AM - 4PM EST',
+                footer_desc: 'Paginas web premium para negocios locales. Creadas por creadores que entienden la atencion. Disenadas para convertir visitantes en clientes.',
+                footer_copy: '&copy; 2026 Loft. Todos los derechos reservados. Hecho con precision en Miami.',
+                form_sent: '<i class="fas fa-check"></i> Mensaje Enviado!'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.getElementById('langEN').classList.toggle('active', lang === 'en');
+            document.getElementById('langES').classList.toggle('active', lang === 'es');
+
+            // Update text-only elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key]) el.textContent = i18n[lang][key];
+            });
+
+            // Update elements with inner HTML (icons, bold, etc.)
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+            });
+
+            // Re-bind FAQ accordions after HTML swap
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.onclick = () => {
+                    const item = btn.parentElement;
+                    const answer = item.querySelector('.faq-answer');
+                    const inner = answer.querySelector('.faq-answer-inner');
+                    const isOpen = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = '0';
+                    });
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = inner.scrollHeight + 24 + 'px';
+                    }
+                };
+            });
+        }
+
+        document.getElementById('langToggle').addEventListener('click', () => {
+            setLang(currentLang === 'en' ? 'es' : 'en');
+        });
+
+        // Update form submission message for current language
+        const origFormHandler = document.getElementById('contactForm');
+        origFormHandler.removeEventListener('submit', () => {});
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalKey = 'form_submit';
+            btn.innerHTML = i18n[currentLang].form_sent;
+            btn.style.background = '#28c840';
+            setTimeout(() => {
+                btn.innerHTML = i18n[currentLang][originalKey];
+                btn.style.background = '';
+                e.target.reset();
+            }, 3000);
         });
     </script>
 </body>
