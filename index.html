@@ -953,18 +953,21 @@
         }
 
         .founder-avatar {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent), var(--cool));
             margin: 0 auto 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary);
+            overflow: hidden;
+            padding: 2px;
+        }
+
+        .founder-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
         }
 
         .founder h4 {
@@ -2047,12 +2050,12 @@
                     <div class="about-card">
                         <div class="founder-row">
                             <div class="founder">
-                                <div class="founder-avatar">MG</div>
+                                <div class="founder-avatar"><img src="matthew.jpg" alt="Matthew Gonzalez - Co-Founder of Loft"></div>
                                 <h4>Matthew Gonzalez</h4>
                                 <p data-i18n="founder1_role">Co-Founder / Creative Director</p>
                             </div>
                             <div class="founder">
-                                <div class="founder-avatar" style="background: linear-gradient(135deg, var(--cool), var(--accent));">AC</div>
+                                <div class="founder-avatar" style="background: linear-gradient(135deg, var(--cool), var(--accent));"><img src="aiden.jpg" alt="Aiden Camacho - Co-Founder of Loft"></div>
                                 <h4>Aiden Camacho</h4>
                                 <p data-i18n="founder2_role">Co-Founder / Lead Engineer</p>
                             </div>
